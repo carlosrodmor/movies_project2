@@ -7,12 +7,16 @@
             <h1>Signup</h1>
             <hr>
 
-            <form action="/signup" method="POST">
+            <form action="/signup" method="POST" enctype="multipart/form-data">
 
                 <div class="mb-3 row">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" id="username" name="username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="avatar" class="form-label">Avatar</label>
+                        <input type="file" class="form-control" id="avatar" name="avatar">
                     </div>
                     <div class="col">
                         <label for="email" class="form-label"> Email </label>
@@ -23,6 +27,9 @@
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
                 </div>
+
+
+
 
 
 

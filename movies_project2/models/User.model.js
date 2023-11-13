@@ -23,6 +23,10 @@ const userSchema = new Schema(
       type: String,
       enum: ['USER', 'ADMIN'],
       default: 'USER'
+    },
+    avatar: {
+      type: String,
+      default: "../images/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
     }
   },
   {
