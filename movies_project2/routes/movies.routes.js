@@ -4,14 +4,16 @@ const router = express.Router();
 const tmdbService = require("../services/tmdb.services")
 
 
-router.get("/", (req, res, next) => {
+router.get("/best", (req, res, next) => {
     tmdbService
         .getTopRated()
         .then(response => {
-            res.json({ popular: response.data })
+            res.render("movies/top50", { popular: response.data.results })
         })
         .catch(err => next(err))
 })
+
+router.get("/popular")
 
 
 module.exports = router
