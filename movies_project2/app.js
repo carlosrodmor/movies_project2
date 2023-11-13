@@ -23,8 +23,8 @@ app.use("/", indexRoutes);
 const authRoutes = require("./routes/auth.routes");
 app.use("/", authRoutes);
 
-// const moviesRoutes = require("./routes/movies.routes");
-// app.use("/movies", moviesRoutes);
+const moviesRoutes = require("./routes/movies.routes");
+app.use("/movies", moviesRoutes);
 
 // const communitiesRoutes = require("./routes/communities.routes");
 // app.use("/", communitiesRoutes);
