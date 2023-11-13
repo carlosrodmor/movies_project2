@@ -26,9 +26,6 @@ app.use("/", authRoutes);
 const moviesRoutes = require("./routes/movies.routes");
 app.use("/movies", moviesRoutes);
 
-const moviesmvpRoutes = require("./routes/moviesmvp.routes");
-app.use("/movies", moviesmvpRoutes);
-
 // const communitiesRoutes = require("./routes/communities.routes");
 // app.use("/", communitiesRoutes);
 

@@ -18,7 +18,19 @@ class TMDBService {
     getTopRated() {
         return this.axiosApp.get('/movie/top_rated')
     }
+    getPopularMovies() {
+        return this.axiosApp.get('/movie/popular')
+    }
+
+    getGenres() {
+        return this.axiosApp.get('/genre/movie/list')
+    }
+    getReleaseDate() {
+        return this.axiosApp.get("/discover/movie")
+    }
 }
+
+
 
 
 
