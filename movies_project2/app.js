@@ -32,9 +32,6 @@ app.use("/", profileRoutes);
 // const communitiesRoutes = require("./routes/communities.routes");
 // app.use("/", communitiesRoutes);
 
-// // const indexRoutes = require("./routes/index.routes");
-// // app.use("/", indexRoutes);
-
 require("./error-handling")(app);
 
 module.exports = app;
