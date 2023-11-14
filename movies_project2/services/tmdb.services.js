@@ -15,6 +15,9 @@ class TMDBService {
         })
     }
 
+    getOneMovie(id) {
+        return this.axiosApp.get(`/movie/${id}`)
+    }
     getTopRated() {
         return this.axiosApp.get('/movie/top_rated')
     }

@@ -22,12 +22,14 @@ router.get("/popular", (req, res, next) => {
         })
 })
 
-// DETALLEEEESS!!!!!!
-
-// router.get("/details/:id", (req, res, next) => {
-//     const { id } = req.params
-
-// })
+router.get("/movie-details/:id", (req, res, next) => {
+    const { id } = req.params
+    tmdbService
+        .getOneMovie(id)
+        .then(response => {
+            res.render("movies/movie-details", response.data)
+        })
+})
 
 
 router.get("/filter", (req, res, next) => {
@@ -40,17 +42,6 @@ router.get("/filter", (req, res, next) => {
         .catch(err => next(err))
 
 })
-
-// router.get("/dates", (req, res, next) => {
-//     const startYear = req.params.startYear
-//     const endYear = req.params.endYear
-
-//     tmdbService
-//         .getReleaseDate()
-//         .then(response => {
-//             res.json({ release: response.data })
-//         })
-// })
 
 router.get("/search/:title", (req, res, next) => {
     const title = req.query.title

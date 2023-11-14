@@ -1,11 +1,29 @@
 <div class="container mt-5">
-
-    <h1>Detalles de {{character.name}}</h1>
-
+    <h1> Details of {{title}}</h1>
     <hr>
+    <div class="row">
+        <div class="col-6">
 
-    <p>Tiene como arma {{character.weapon}}, como ID el {{character.id}} y trabaja de {{character.occupation}}</p>
+            <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2{{poster_path}}" alt="poster">
 
-    <a href="/personajes/listado" class="btn btn-dark">Volver al listado</a>
+        </div>
+        <div class="col-6">
+            <h6> SYNOPSIS </h6>
+            <hr>
+            <p> {{overview}} </p>
+
+            <hr>
+
+            <h5> Rating: {{vote_average}}</h5>
+
+            <h5> Vote Count: {{vote_count}}</h5>
+            <div class="buttonDetails">
+                <a href="/" class="btn btn-dark"> Back Home </a>
+            </div>
+        </div>
+
+
+
+    </div>
 
 </div>
