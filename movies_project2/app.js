@@ -26,6 +26,9 @@ app.use("/", authRoutes);
 const moviesRoutes = require("./routes/movies.routes");
 app.use("/movies", moviesRoutes);
 
+const profileRoutes = require("./routes/profile.routes");
+app.use("/", profileRoutes);
+
 // const communitiesRoutes = require("./routes/communities.routes");
 // app.use("/", communitiesRoutes);
 
