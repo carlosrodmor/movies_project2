@@ -30,11 +30,11 @@ router.get("/popular", (req, res, next) => {
 // })
 
 
-router.get("/search", (req, res, next) => {
+router.get("/filter", (req, res, next) => {
     tmdbService
         .getGenres()
         .then(response => {
-            res.render("movies/search", { genres: response.data.genres })
+            res.render("movies/filter", { genres: response.data.genres })
             // res.json({ genres: response.data.genres })
         })
         .catch(err => next(err))
@@ -51,6 +51,19 @@ router.get("/search", (req, res, next) => {
 //             res.json({ release: response.data })
 //         })
 // })
+
+router.get("/search/:title", (req, res, next) => {
+    const title = req.query.title
+
+    tmdbService
+        .getMovies(title)
+        .then(response => {
+            res.render("movies/search", { movies: response.data.results });
+        })
+        .catch(err => next(err));
+});
+
+
 
 
 

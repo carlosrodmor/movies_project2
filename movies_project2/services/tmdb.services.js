@@ -28,6 +28,18 @@ class TMDBService {
     getReleaseDate() {
         return this.axiosApp.get("/discover/movie")
     }
+
+    getMovies(title) {
+        return this.axiosApp.get('/search/movie', {
+            params: {
+                query: title,
+                include_adult: 'false',
+                language: 'en-US',
+                page: '1'
+            }
+        });
+    }
+
 }
 
 
