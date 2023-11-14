@@ -1,12 +1,19 @@
 <div class="container">
+    <h1>Results </h1>
+    <div class="row">
+        {{#each movies}}
+        <div class="col-4">
 
-    <h1>Searcher</h1>
-
-    <select class="form-select" aria-label="Default select example">
-        <option selected> Choose a genre </option>
-        {{#each genres}}
-        <option value="{{id}}">{{name}}</option>
+            <div class="card" style="width: 18rem;">
+                <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2{{poster_path}}" class="card-img-top"
+                    alt="poster">
+                <div class="card-body">
+                    <h5 class="card-title"> {{title}}</h5>
+                    <p class="card-text">Rating: {{vote_average}}</p>
+                    <a href="/movies/movie-details" class="btn btn-dark">Details</a>
+                </div>
+            </div>
+        </div>
         {{/each}}
-    </select>
-
+    </div>
 </div>
