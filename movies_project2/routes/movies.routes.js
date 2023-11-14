@@ -43,20 +43,17 @@ router.get("/filter", (req, res, next) => {
 
 })
 
-router.get("/search/:title", (req, res, next) => {
-    const title = req.query.title
+router.get("/search", (req, res, next) => {
+
+    const { title } = req.query
 
     tmdbService
         .getMovies(title)
-        .then(response => {
-            res.render("movies/search", { movies: response.data.results });
+        .then(({ data }) => {
+            res.render("movies/search", { movies: data.results })
         })
         .catch(err => next(err));
 });
-
-
-
-
 
 
 module.exports = router

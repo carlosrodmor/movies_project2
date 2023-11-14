@@ -29,8 +29,8 @@ app.use("/movies", moviesRoutes);
 const profileRoutes = require("./routes/profile.routes");
 app.use("/", profileRoutes);
 
-// const communitiesRoutes = require("./routes/communities.routes");
-// app.use("/", communitiesRoutes);
+const communitiesRoutes = require("./routes/communities.routes");
+app.use("/", communitiesRoutes);
 
 require("./error-handling")(app);
 

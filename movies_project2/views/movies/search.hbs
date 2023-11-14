@@ -3,13 +3,13 @@
     <div class="row">
         {{#each movies}}
         <div class="col-4">
-
             <div class="card" style="width: 18rem;">
                 <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2{{poster_path}}" class="card-img-top"
                     alt="poster">
                 <div class="card-body">
                     <h5 class="card-title"> {{title}}</h5>
                     <p class="card-text">Rating: {{vote_average}}</p>
+                    <p class="card-text">Year: {{release_date}}</p>
                     <a href="/movies/movie-details" class="btn btn-dark">Details</a>
                 </div>
             </div>
