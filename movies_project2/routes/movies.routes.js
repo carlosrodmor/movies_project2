@@ -41,31 +41,17 @@ router.get("/filter", (req, res, next) => {
 
 })
 
-// router.get("/dates", (req, res, next) => {
-//     const startYear = req.params.startYear
-//     const endYear = req.params.endYear
+router.get("/search", (req, res, next) => {
 
-//     tmdbService
-//         .getReleaseDate()
-//         .then(response => {
-//             res.json({ release: response.data })
-//         })
-// })
-
-router.get("/search/:title", (req, res, next) => {
-    const title = req.query.title
+    const { title } = req.query
 
     tmdbService
         .getMovies(title)
-        .then(response => {
-            res.render("movies/search", { movies: response.data.results });
+        .then(({ data }) => {
+            res.render("movies/search", { movies: data.results })
         })
         .catch(err => next(err));
 });
-
-
-
-
 
 
 module.exports = router

@@ -8,6 +8,10 @@ const communitySchema = new Schema(
         description: {
             type: String,
         },
+        cover: {
+            type: String,
+            default: "../images/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
+        },
         members: [{
             type: Schema.Types.ObjectId,
             ref: 'User'
