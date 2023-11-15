@@ -1,7 +1,6 @@
 <div class="mb-3">
-
-    <form action="/communities/forum" method="post">
-        <label for="exampleFormControlInput1" class="form-label">Write your comment:</label>
+    <form action="/community/{{_id}}/forum" method="post">
+        <label for=" exampleFormControlInput1" class="form-label">Write your comment:</label>
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Is my favorite film..."
             name="text">
         <button type="submit">Add comment</button>

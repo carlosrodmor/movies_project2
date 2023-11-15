@@ -13,11 +13,11 @@ const commentSchema = new Schema(
         text: {
             type: String,
             required: true
-        },
-        likes: [{
-            type: Schema.Types.ObjectId,
-            ref: "User",
-        }]
+        }
+        // likes: [{
+        //     type: Schema.Types.ObjectId,
+        //     ref: "User",
+        // }]
     },
     {
         timestamps: true

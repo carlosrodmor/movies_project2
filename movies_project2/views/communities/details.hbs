@@ -15,20 +15,29 @@
 <div class="container">
 
     <div class="card mb-3">
-        <img src="../../images/wall1.jpg" class="card-img-top  w-50 h-30" alt="example community img">
+        <img src="{{cover}}" class="card-img-top  w-50 h-30" alt="example community img">
         <div class="card-body">
             <h5 class="card-title">{{name}}</h5>
             <p class="card-text">{{description}}</p>
-            <p class="card-text"><small class="text-muted">**Members</small>
+            <p class="card-text"><small class="text-muted">More than... 50 members! Be one of them...</small>
             </p>
+            <p class="card-text"><small class="text-muted">
+                    {{#each members}}
+                    {{username}}
+                    {{/each}}
+                </small>
+            </p>
+
+
             <p class="card-text"><small class="text-muted">
                     <form action="/addcommunity/{{_id}}" method="post">
                         <button type="submit">Join the community</button>
                     </form>
                 </small></p>
-            <p class="card-text"><small class="text-muted"><a href="/community/forum/{{_id}}">Go to the
-                        forum</a></small>
+            <p class="card-text"><small class="text-muted"><a href="/community/{{_id}}/forum">Already in the community?
+                        Go right to the comments!</a></small>
             </p>
+
 
         </div>
     </div>
