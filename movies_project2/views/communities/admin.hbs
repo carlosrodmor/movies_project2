@@ -1,6 +1,8 @@
-<form class="d-flex" role="search" method="post" action="/communities">
+<form class="d-flex" role="search" method="post" action="/communitiesadmin" enctype="multipart/form-data">
     <input class="form-control me-2" type="search" placeholder="Community name" aria-label="Search" name="name">
     <input class="form-control me-2" type="search" placeholder="Description" aria-label="Search" name="description">
+    <input type="file" class="form-control" id="cover" name="cover">
+
     <button class="btn btn-outline-success" type="submit">Create</button>
 </form>
 

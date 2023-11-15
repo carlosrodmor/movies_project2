@@ -1,18 +1,16 @@
-<div class="card mb-3">
-    {{#each datos}}
-    <img src="{{cover}}" class="card-img-top w-25 h-50" alt="community cover">
-    <div class="card-body">
-        <h5 class="card-title">{{name}}</h5>
-        <p class="card-text">{{description}}.</p>
-        <p class="card-text"><small class="text-muted">Members</small></p>
-        <a href="/community/{{_id}}">See more</a>
-        {{/each}}
+  <div class="container">
+        <div class="card mb-3">
+            {{#each datos}}
+            <img src="{{cover}}" class="card-img-top w-50 h-50" alt="community cover">
+            <div class="card-body">
+                <h5 class="card-title justify-center">{{name}}</h5>
+                <p class="card-text justify-center">{{description}}</p>
+                <p class="card-text justify-center"><a href="/community/{{_id}}">See more</a></p>
+                {{/each}}
+            </div>
+        </div>
+
     </div>
-
-
-
-
-
 
 
 
@@ -72,3 +70,5 @@
         <path fill="#9f889f" class="in-bottom"
             d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z" />
     </svg>
+
+

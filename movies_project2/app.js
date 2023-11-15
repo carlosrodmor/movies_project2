@@ -11,26 +11,28 @@ const app = express();
 
 require("./config")(app);
 require("./config/session.config")(app)
+require("./routes")(app)
 
 const capitalize = require("./utils/capitalize");
 const projectName = "movies_project2";
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
-const indexRoutes = require("./routes/index.routes");
-app.use("/", indexRoutes);
 
-const authRoutes = require("./routes/auth.routes");
-app.use("/", authRoutes);
+// const indexRoutes = require("./routes/index.routes");
+// app.use("/", indexRoutes);
 
-const moviesRoutes = require("./routes/movies.routes");
-app.use("/movies", moviesRoutes);
+// const authRoutes = require("./routes/auth.routes");
+// app.use("/", authRoutes);
 
-const profileRoutes = require("./routes/profile.routes");
-app.use("/", profileRoutes);
+// const moviesRoutes = require("./routes/movies.routes");
+// app.use("/movies", moviesRoutes);
 
-const communitiesRoutes = require("./routes/communities.routes");
-app.use("/", communitiesRoutes);
+// const profileRoutes = require("./routes/profile.routes");
+// app.use("/", profileRoutes);
+
+// const communitiesRoutes = require("./routes/communities.routes");
+// app.use("/", communitiesRoutes);
 
 require("./error-handling")(app);
 
