@@ -29,6 +29,22 @@ router.get('/communities/list', (req, res) => {
         // .then(communities => res.render("communities/list", communities))
         .catch(err => console.log(err))
 })
+
+router.get('/communities/forum', (req, res) => {
+    res.render("communities/forum")
+})
+
+router.post('/communities/forum', (req, res) => {
+
+    // const { _id } = req.params
+    const userId = req.session.currentUser._id
+    const { text } = req.body
+
+    Comment
+        .create({ text: text, user: userId })
+        .then(() => res.redirect("/communities/list"))
+        .catch(err => console.log(err))
+})
 router.get('/community/:_id', (req, res) => {
 
     const { _id } = req.params
@@ -52,9 +68,26 @@ router.post('/addcommunity/:_id', (req, res) => {
 })
 
 
-router.get('/communities/forum', (req, res) => {
-    res.render("communities/forum")
-})
+// router.get('/communities/forum', (req, res) => {
+//     res.render("communities/forum")
+// })
+
+// router.post('/communities/forum', (req, res) => {
+
+//     // const { _id } = req.params
+//     // const userId = req.session.currentUser._id
+//     const { text } = req.body
+
+//     Comment
+//         .create({ text: text })
+//         .then(() => res.redirect("/communities/list"))
+//         .catch(err => console.log(err))
+// })
+
+
+
+
+
 // router.get('/community/forum/:_id', (req, res) => {
 
 //     const { _id } = req.params
