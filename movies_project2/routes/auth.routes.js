@@ -8,14 +8,13 @@ const saltRounds = 10
 
 const uploaderMiddleware = require('../middleware/uploader.middleware')
 
-// const { isLoggedOut } = require('../middleware/route-guard')
-
+const { isLoggedOut, isLoggedIn } = require('../middleware/route-guard')
 
 router.get("/signup", (req, res) => {
     res.render("auth/signup")
 })
 
-router.post("/signup", uploaderMiddleware.single('avatar'), (req, res, next) => {
+router.post("/signup", uploaderMiddleware.single('avatar'), isLoggedOut, (req, res, next) => {
 
     const { username, email, password } = req.body
     const { path: avatar } = req.file
@@ -31,11 +30,11 @@ router.post("/signup", uploaderMiddleware.single('avatar'), (req, res, next) => 
 
 
 
-router.get("/login", (req, res) => {
+router.get("/login", isLoggedOut, (req, res) => {
     res.render("auth/login")
 })
 
-router.post("/login", (req, res, next) => {
+router.post("/login", isLoggedOut, (req, res, next) => {
 
     const { email, password } = req.body
 
@@ -66,7 +65,7 @@ router.post("/login", (req, res, next) => {
 })
 
 
-router.get('/logout', (req, res) => {
+router.get('/logout', isLoggedIn, (req, res) => {
     req.session.destroy(() => res.redirect('/'))
 })
 

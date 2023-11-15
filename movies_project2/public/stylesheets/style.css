@@ -10,6 +10,14 @@ a {
 h1 {
   color: white;
   text-align: center;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right top, #ffff34, #ffc812, #ff8f2f, #ff554d, #eb1267);
+  background-size: 50% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 5vw;
+  animation: gradientAnim 7.5s ease alternate infinite;
 
 }
 
@@ -69,7 +77,7 @@ h6 {
 }
 
 .indexTitle {
-  font-size: 80px;
+  font-size: 120px;
   padding-top: 250px;
   color: white
 }
@@ -100,7 +108,14 @@ h6 {
   border-color: #fff !important;
 }
 
+.buttonsProfile {
+  padding-top: 200px;
+  margin-right: 500px;
+}
 
+.avatarEdit {
+  height: 250px;
+}
 
 
 
@@ -108,7 +123,7 @@ h6 {
 
 
 body {
-  background-color: #4a3d4a;
+  background-color: #000000;
   z-index: -1;
 }
 
@@ -144,4 +159,22 @@ a img.icon {
   display: inline-block;
   height: 1em;
   margin: 0 0 -0.1em 0.3em;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.container-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+
+@keyframes gradientAnim {
+  to {
+    background-position: 100% top;
+  }
 }

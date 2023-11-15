@@ -3,15 +3,16 @@ const router = express.Router()
 
 const Community = require("../models/Community.model")
 const Comment = require("../models/Comment.model")
+const { isLoggedIn, checkRole } = require("../middleware/route-guard")
 
 
-router.get('/communitiesadmin', (req, res) => {
+router.get('/communitiesadmin', isLoggedIn, checkRole("ADMIN"), (req, res) => {
 
     res.render("communities/admin")
 })
 
 
-router.post('/communitiesadmin', (req, res) => {
+router.post('/communitiesadmin', isLoggedIn, checkRole("ADMIN"), (req, res) => {
 
     const { name, description } = req.body
 
@@ -21,7 +22,7 @@ router.post('/communitiesadmin', (req, res) => {
         .catch(err => console.log(err))
 })
 
-router.get('/communities/list', (req, res) => {
+router.get('/communities/list', isLoggedIn, (req, res) => {
 
     Community
         .find()
@@ -29,7 +30,7 @@ router.get('/communities/list', (req, res) => {
         // .then(communities => res.render("communities/list", communities))
         .catch(err => console.log(err))
 })
-router.get('/community/:_id', (req, res) => {
+router.get('/community/:_id', isLoggedIn, (req, res) => {
 
     const { _id } = req.params
 
@@ -40,7 +41,7 @@ router.get('/community/:_id', (req, res) => {
 })
 
 
-router.post('/addcommunity/:_id', (req, res) => {
+router.post('/addcommunity/:_id', isLoggedIn, (req, res) => {
 
     const { _id } = req.params
     const userId = req.session.currentUser._id
@@ -52,7 +53,7 @@ router.post('/addcommunity/:_id', (req, res) => {
 })
 
 
-router.get('/communities/forum', (req, res) => {
+router.get('/communities/forum', isLoggedIn, (req, res) => {
     res.render("communities/forum")
 })
 // router.get('/community/forum/:_id', (req, res) => {
