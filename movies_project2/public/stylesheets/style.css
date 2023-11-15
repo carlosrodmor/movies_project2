@@ -30,6 +30,15 @@ h6 {
   color: white;
 }
 
+.commentForum {
+  color: rgb(221, 172, 172);
+}
+
+.imgCommunities {
+  height: 700px;
+}
+
+
 .overview {
   color: white;
 }

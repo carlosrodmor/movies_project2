@@ -1,32 +1,28 @@
-<div class="container">
+<div class="container" style="color: white;">
 
-    <div class="card mb-3">
-        <img src="{{cover}}" class="card-img-top  w-50 h-30" alt="example community img">
-        <div class="card-body">
-            <h5 class="card-title">{{name}}</h5>
-            <p class="card-text">{{description}}</p>
-            <p class="card-text"><small class="text-muted">More than... 50 members! Be one of them...</small>
-            </p>
-            <p class="card-text"><small class="text-muted">
-                    {{#each members}}
-                    {{username}}
-                    {{/each}}
-                </small>
-            </p>
-
-
-            <p class="card-text"><small class="text-muted">
-                    <form action="/addcommunity/{{_id}}" method="post">
-                        <button type="submit">Join the community</button>
-                    </form>
-                </small></p>
-            <p class="card-text"><small class="text-muted"><a href="/community/{{_id}}/forum">Already in the community?
-                        Go right to the comments!</a></small>
-            </p>
+    <img src="{{cover}}" class="card-img-top  w-50 h-30" alt="example community img">
+    <hr>
+    <h5 class="card-title">{{name}}</h5>
+    <hr>
+    <p class="card-text" style="color: white;">{{description}}</p>
+    <p class="card-text" style="color: white;"><small class="text-muted">More than... 50 members! Be one of
+            them...</small>
+    </p>
+    <p class="card-text"><small class="text-muted">
+            {{#each members}}
+            {{username}}
+            {{/each}}
+        </small>
+    </p>
 
 
-        </div>
-    </div>
+    <p class="card-text"><small class="text-muted">
+            <form action="/addcommunity/{{_id}}" method="post">
+                <button type="submit" class="btn btn-light">Join the community</button>
+            </form>
+        </small></p>
+    <a href="/community/{{_id}}/forum" class="btn btn-info">
+        Already in the community? Go right to the comments!</a>
 
 </div>
 
