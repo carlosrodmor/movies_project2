@@ -1,5 +1,6 @@
 <div class="container">
     <h1>Results </h1>
+    <hr>
     <div class="row">
         {{#each movies}}
         <div class="col-4">
@@ -10,7 +11,7 @@
                     <h5 class="card-title"> {{title}}</h5>
                     <p class="card-text">Rating: {{vote_average}}</p>
                     <p class="card-text">Year: {{release_date}}</p>
-                    <a href="/movies/movie-details" class="btn btn-dark">Details</a>
+                    <a href="/movies/movie-details/{{id}}" class="btn btn-dark">Details</a>
                 </div>
             </div>
         </div>

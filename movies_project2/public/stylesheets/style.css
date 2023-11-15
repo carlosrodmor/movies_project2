@@ -8,7 +8,7 @@ a {
 }
 
 h1 {
-  color: 15px;
+  color: white;
   text-align: center;
 
 }
@@ -16,6 +16,22 @@ h1 {
 h3 {
   text-align: center;
 
+}
+
+h6 {
+  color: white;
+}
+
+.overview {
+  color: white;
+}
+
+.rating {
+  color: white;
+}
+
+.voteCount {
+  color: white;
 }
 
 .myNav {
@@ -30,6 +46,13 @@ h3 {
   color: white
 }
 
+.searcherNav {
+  padding-left: 300px;
+}
+
+.searcherForm {
+  color: white;
+}
 
 .navbar-brand {
 
@@ -70,15 +93,55 @@ h3 {
 
 .navbar-dark .navbar-nav .nav-link {
   color: #fff !important;
-  /* White text for links */
 }
-
-/* .navbar-dark .navbar-toggler-icon {
-  background-color: #fff !important;
-  /* White color for the toggler icon */
 
 
 */ .navbar-dark .navbar-toggler {
   border-color: #fff !important;
-  /* White border color for the toggler button */
+}
+
+
+
+
+
+
+
+
+body {
+  background-color: #4a3d4a;
+  z-index: -1;
+}
+
+svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+
+.links {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  margin-left: 1em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a img.icon {
+  display: inline-block;
+  height: 1em;
+  margin: 0 0 -0.1em 0.3em;
 }

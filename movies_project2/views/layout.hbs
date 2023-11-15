@@ -11,10 +11,14 @@
 </head>
 
 <body>
-
+   <div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+   </div>
    <nav class=" myNav navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-         <a class="navbar-brand" href="/">MovieInfo</a>
+         <a class="navbar-brand" href="/">MovieDB</a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,37 +32,38 @@
                   <a class="nav-link" href="/movies/popular">Popular Movies</a>
                </li>
                <li class="nav-item">
+                  <a class="nav-link" href="/communities/list"> Communities </a>
+               </li>
+               <li class="nav-item searcherNav">
                   <form class="d-flex" role="search" method="get" action="/movies/search">
                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                         name="title">
                      <button class="btn btn-outline-success" type="submit">Search</button>
                   </form>
                </li>
-
-               <hr>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                     aria-expanded="false">
-                     Profile
-                  </a>
-                  <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="/login">Login</a></li>
-                     <li><a class="dropdown-item" href="/signup">Signup</a></li>
-                     <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                  </ul>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                     aria-expanded="false">
-                     Admin
-                  </a>
-                  <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="/communitiesadmin">Communities panel</a></li>
-                     <li><a class="dropdown-item" href="/signup">Signup</a></li>
-                     <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                  </ul>
-               </li>
             </ul>
+            <li class="nav-item dropdown d-flex">
+               <a class="nav-link navbar-brand dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Profile
+               </a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/login">Login</a></li>
+                  <li><a class="dropdown-item" href="/signup">Signup</a></li>
+                  <li><a class="dropdown-item" href="/logout">Logout</a></li>
+               </ul>
+            </li>
+            <li class="nav-item dropdown d-flex">
+               <a class="nav-link navbar-brand dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Admin
+               </a>
+               <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="/communitiesadmin">Communities panel</a></li>
+                  <li><a class="dropdown-item" href="/signup">Signup</a></li>
+                  <li><a class="dropdown-item" href="/logout">Logout</a></li>
+               </ul>
+            </li>
 
             {{!-- <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -83,10 +88,6 @@
    </nav>
 
    {{{body}}}
-
-
-   <a href="/communities/list">Join now to a community</a>
-
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
    <script src="/js/script.js"></script>
