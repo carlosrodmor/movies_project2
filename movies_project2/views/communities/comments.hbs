@@ -1,14 +1,16 @@
 <div class="container commentSection">
+    <h1> 🪐 Forum 🪐</h1>
     {{#each comments}}
     <h6> User: {{user.username}}</h6>
     <p class="commentForum">Comment: {{text}}</p>
     <hr>
     {{/each}}
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
+
+
+    <button type="button" class="btn btn-dark mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Add a comment </button>
 
-    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

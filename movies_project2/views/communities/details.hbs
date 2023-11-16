@@ -8,9 +8,11 @@
     </p>
     <h6>
         Members:
+        |
         {{#each members}}
-        {{username}}
+        {{username}} |
         {{/each}}
+
     </h6>
 
 
@@ -18,14 +20,19 @@
 
     <hr>
     <div class="row">
-        <div class="col-6">
+        <div class="col-4">
             <form action="/addcommunity/{{_id}}" method="post">
                 <button type="submit" class="btn btn-light">Join the community</button>
             </form>
         </div>
-        <div class="col-6">
+        <div class="col-4">
+            <form action="/deletecommunity/{{_id}}" method="post">
+                <button type="submit" class="btn btn-danger">Delete from your community</button>
+            </form>
+        </div>
+        <div class="col-4">
             <a href="/community/{{_id}}/forum" class="btn btn-info">
-                Already in the community? Go right to the comments!
+                Go right to the comments!
             </a>
         </div>
     </div>

@@ -26,7 +26,6 @@ router.post("/editprofile", isLoggedIn, (req, res, next) => {
         .catch(err => next(err))
 })
 
-<<<<<<< HEAD
 router.get("/myprofile/communities", isLoggedIn, (req, res, next) => {
     const { username } = req.body
     const { _id } = req.session.currentUser
@@ -36,7 +35,15 @@ router.get("/myprofile/communities", isLoggedIn, (req, res, next) => {
         .catch(err => next(err))
 })
 
-=======
->>>>>>> 830ef568156613d6755ab0f9154176cdc33023d1
+router.post("/editprofile/delete", (req, res, next) => {
+    const { _id } = req.session.currentUser
+
+    User
+        .findByIdAndDelete(_id)
+        .then(() => {
+            console.log("usuario borrado!!!!!!!!!!")
+        })
+        .catch(err => next(err))
+})
 
 module.exports = router

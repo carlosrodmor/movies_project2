@@ -65,6 +65,21 @@ router.post('/addcommunity/:_id', (req, res) => {
     }
 })
 
+router.post('/deletecommunity/:_id', (req, res) => {
+
+    if (!req.session.currentUser) {
+        return res.status(401).send("Usuario no autenticado");
+    } else {
+        const { _id: idCommunity } = req.params
+        const userId = req.session.currentUser._id
+
+        Community
+            .findByIdAndUpdate(idCommunity, { $pull: { members: userId } })
+            // .findByIdAndUpdate(_id, { $addToSet: { members: req.session.currentUser._id } })
+            .then(() => res.redirect(`/community/${idCommunity}`))
+            .catch(err => console.log(err))
+    }
+})
 
 router.get('/community/:_id/forum', (req, res) => {
 
@@ -91,6 +106,8 @@ router.post('/community/:_id/forum', (req, res, next) => {
         .then(() => res.redirect(`/community/${community}/forum`))
         .catch(err => next(err))
 })
+
+
 
 
 

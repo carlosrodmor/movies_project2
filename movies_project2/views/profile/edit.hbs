@@ -33,17 +33,25 @@
                             value="{{user.password}}">
                     </div>
                 </div>
-
-                <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-dark block">Save changes</button>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-dark block">Save changes</button>
+                        </div>
+                    </div>
                 </div>
-
                 {{#if errorMessage}}
                 <div id="errorMessage">
                     <p>{{errorMessage}}</p>
                 </div>
                 {{/if}}
 
+
+
+            </form>
+            <hr>
+            <form action="/editprofile/delete" method="POST">
+                <input type="submit" value="delete" class="btn btn-danger mb-2">
             </form>
         </div>
     </div>
