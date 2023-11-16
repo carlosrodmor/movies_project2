@@ -1,5 +1,8 @@
 const { Schema, model } = require("mongoose");
 
+// TODO: INTEGRAR MEJOR VALIDACIÓN EN MODELOS
+// TODO: INTEGRAR VALIDACIÓN CUSTOMIZADA
+
 const commentSchema = new Schema(
     {
         community: {
@@ -12,7 +15,8 @@ const commentSchema = new Schema(
         },
         text: {
             type: String,
-            required: true
+            required: [true, 'El texto es obligatorio'],
+            minlength: [20, 'Mínimo 20 caracteres']
         }
         // likes: [{
         //     type: Schema.Types.ObjectId,

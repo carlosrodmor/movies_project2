@@ -17,7 +17,6 @@ router.get("/popular", (req, res, next) => {
     tmdbService
         .getPopularMovies()
         .then(response => {
-            // res.json({ popular: response.data })
             res.render("movies/popular", { popular: response.data.results })
         })
 })
