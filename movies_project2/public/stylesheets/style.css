@@ -34,6 +34,12 @@ h6 {
   color: rgb(221, 172, 172);
 }
 
+.imgOwnCommunity {
+  height: 150px;
+  align-items: center;
+}
+
+
 .imgCommunities {
   height: 700px;
 }

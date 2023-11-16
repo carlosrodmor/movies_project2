@@ -26,8 +26,6 @@ router.post('/communitiesadmin', uploaderMiddleware.single('cover'), (req, res) 
         .catch(err => console.log(err))
 })
 
-
-
 //lista de comunidades
 router.get('/communities/list', (req, res) => {
 
