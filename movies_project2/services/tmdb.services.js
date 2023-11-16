@@ -1,7 +1,5 @@
 const axios = require("axios")
 
-
-
 class TMDBService {
 
     constructor() {
@@ -18,9 +16,11 @@ class TMDBService {
     getOneMovie(id) {
         return this.axiosApp.get(`/movie/${id}`)
     }
+
     getTopRated() {
         return this.axiosApp.get('/movie/top_rated')
     }
+
     getPopularMovies() {
         return this.axiosApp.get('/movie/popular')
     }
@@ -42,55 +42,9 @@ class TMDBService {
             }
         });
     }
-
 }
-
-
-
-
 
 
 const tmdbService = new TMDBService()
 
 module.exports = tmdbService
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// getAllCharacters() {
-//     return this.axiosApp.get('/characters')
-// }
-
-// getOneCharacter(character_id) {
-//     return this.axiosApp.get(`/characters/${character_id}`)
-// }
-
-// saveCharacter(character_data) {
-//     return this.axiosApp.post(`/characters`, character_data)
-// }
-
-// editCharacter(character_id, character_data) {
-//     return this.axiosApp.put(`/characters/${character_id}`, character_data)
-// }
-
-
-
-
-
-
-

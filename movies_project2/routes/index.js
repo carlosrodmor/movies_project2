@@ -1,5 +1,8 @@
 module.exports = app => {
 
+    // TODO: REVISAR QUE TODO THEN LLEVA SU CATCH
+    // TODO: GESTIONAR TODOS LOS CATCH CON NEXT
+
     const indexRoutes = require("./index.routes")
     app.use("/", indexRoutes)
 
@@ -15,7 +18,3 @@ module.exports = app => {
     const communitiesRoutes = require("./communities.routes")
     app.use("/", communitiesRoutes)
 }
-
-
-
-

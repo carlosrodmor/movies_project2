@@ -18,7 +18,7 @@
    </div>
    <nav class=" myNav navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-         <a class="navbar-brand" href="/">MovieDB</a>
+         <a class="navbar-brand" href="/">{{appTitle}}</a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -54,6 +54,8 @@
                   <li><a class="dropdown-item" href="/logout">Logout</a></li>
                </ul>
             </li>
+
+            {{#if isAdmin}}
             <li class="nav-item dropdown d-flex">
                <a class="nav-link navbar-brand dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -66,24 +68,8 @@
                </ul>
             </li>
 
-            {{!-- <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Profile
-               </a>
-               <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/login">Login</a></li>
-                  <li><a class="dropdown-item" href="/signup">Signup</a></li>
-                  <li><a class="dropdown-item" href="/logout">Logout</a></li>
-               </ul>
-            </li> --}}
+            {{/if}}
 
-
-
-            {{!-- <form class="d-flex" role="search" method="get" action="/movies/search">
-               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="title">
-               <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> --}}
          </div>
       </div>
    </nav>

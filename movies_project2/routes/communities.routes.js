@@ -10,7 +10,6 @@ const uploaderMiddleware = require('../middleware/uploader.middleware')
 //ruta para crear communities
 
 router.get('/communitiesadmin', isLoggedIn, checkRole("ADMIN"), (req, res) => {
-
     res.render("communities/admin")
 })
 
@@ -21,7 +20,7 @@ router.post('/communitiesadmin', uploaderMiddleware.single('cover'), (req, res) 
     const { path: cover } = req.file
 
     Community
-        .create({ name: name, description: description, cover: cover })
+        .create({ name, description, cover })
         .then(() => res.redirect("/"))
         .catch(err => console.log(err))
 })
@@ -33,7 +32,7 @@ router.get('/communities/list', (req, res) => {
 
     Community
         .find()
-        .then(response => res.render("communities/list", { datos: response }))
+        .then(response => res.render("communities/list", { data: response }))
         // .then(communities => res.render("communities/list", communities))
         .catch(err => console.log(err))
 })
@@ -66,32 +65,32 @@ router.post('/addcommunity/:_id', (req, res) => {
             .then(() => res.redirect(`/community/${idCommunity}`))
             .catch(err => console.log(err))
     }
-
-
 })
 
 
 router.get('/community/:_id/forum', (req, res) => {
 
-    const { _id: communityId } = req.params
+    const { _id: community } = req.params
 
     Comment
-        .find({ community: communityId })
+        .find({ community })
         .populate("user", "username")
-        .then((comments) => res.render("communities/comments", { comments, communityId }))
+        .then((comments) => res.render("communities/comments", { comments, community }))
         .catch(err => console.log(err))
 
 })
+
+
 router.post('/community/:_id/forum', (req, res, next) => {
 
-    const { _id: communityId } = req.params
-    const { _id: userId } = req.session.currentUser
+    const { _id: community } = req.params
+    const { _id: user } = req.session.currentUser
 
     const { text } = req.body
 
     Comment
-        .create({ community: communityId, user: userId, text })
-        .then(() => res.redirect(`/community/${communityId}/forum`))
+        .create({ community, user, text })
+        .then(() => res.redirect(`/community/${community}/forum`))
         .catch(err => next(err))
 })
 
