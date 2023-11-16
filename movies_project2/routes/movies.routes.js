@@ -19,6 +19,7 @@ router.get("/popular", (req, res, next) => {
         .then(response => {
             res.render("movies/popular", { popular: response.data.results })
         })
+        .catch(err => next(err))
 })
 
 router.get("/movie-details/:id", (req, res, next) => {
@@ -28,6 +29,7 @@ router.get("/movie-details/:id", (req, res, next) => {
         .then(response => {
             res.render("movies/movie-details", response.data)
         })
+        .catch(err => next(err))
 })
 
 

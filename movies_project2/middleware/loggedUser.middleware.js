@@ -1,7 +1,11 @@
 const loggedUser = (req, res, next) => {
 
-    if (req.session.currentUser && req.session.currentUser.role) {
-        res.locals.isAdmin = req.session.currentUser.role === 'ADMIN'
+    res.locals.loggedUserInfo = {
+        isLogged: req.session.currentUser,
+        userName: req.session.currentUser?.username,
+        userRole: req.session.currentUser?.role,
+        isAdmin: req.session.currentUser?.role === 'ADMIN',
+        userAvatar: req.session.currentUser?.avatar
     }
     next()
 }

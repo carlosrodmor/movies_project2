@@ -1,11 +1,44 @@
-<form class="d-flex" role="search" method="post" action="/communitiesadmin" enctype="multipart/form-data">
+<h3 class="mt-5 white">Community Creator:</h3>
+
+
+<div class="container mt-5 ">
+    <form class="d-flex justify-content-center " role="search" method="post" action="/communitiesadmin"
+        enctype="multipart/form-data">
+
+        <div class="mb-3 white">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Lynch lovers <3"
+                name="name">
+
+            <label for="exampleFormControlTextarea1" class="form-label mt-3">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+
+            <label for="formFile" class="form-label mt-5">Upload a cover</label>
+            <input class="form-control" type="file" id="cover" name="cover">
+            <button class=" btn btn-outline-success mt-5 " type="submit">Create</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+{{!-- <form class="d-flex" role="search" method="post" action="/communitiesadmin" enctype="multipart/form-data">
     <input class="form-control me-2" type="search" placeholder="Community name" aria-label="Search" name="name">
     <input class="form-control me-2" type="search" placeholder="Description" aria-label="Search" name="description">
     <input type="file" class="form-control" id="cover" name="cover">
 
     <button class="btn btn-outline-success" type="submit">Create</button>
-</form>
+</form> --}}
 
+
+
+
+
+{{!-- <div class="mb-3">
+    <label for="formFile" class="form-label">Default file input example</label>
+    <input class="form-control" type="file" id="formFile">
+</div> --}}
 
 
 
