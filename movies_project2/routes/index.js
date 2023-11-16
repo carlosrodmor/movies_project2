@@ -17,4 +17,7 @@ module.exports = app => {
 
     const communitiesRoutes = require("./communities.routes")
     app.use("/", communitiesRoutes)
+
+    const adminRoutes = require("./admin.routes")
+    app.use("/", adminRoutes)
 }

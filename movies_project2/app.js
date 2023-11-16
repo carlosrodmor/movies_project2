@@ -9,7 +9,6 @@ app.locals.appTitle = `MovieDB`
 require("./config")(app)
 require("./config/session.config")(app)
 
-// TODO: MOVER A MIDDLEWARES
 const { loggedUser } = require("./middleware/loggedUser.middleware")
 app.use(loggedUser)
 

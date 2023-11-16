@@ -14,7 +14,7 @@ router.get('/communitiesadmin', isLoggedIn, checkRole("ADMIN"), (req, res) => {
 })
 
 
-router.post('/communitiesadmin', uploaderMiddleware.single('cover'), (req, res) => {
+router.post('/communitiesadmin', uploaderMiddleware.single('cover'), (req, res, next) => {
 
     const { name, description } = req.body
     const { path: cover } = req.file
@@ -22,22 +22,22 @@ router.post('/communitiesadmin', uploaderMiddleware.single('cover'), (req, res) 
     Community
         .create({ name, description, cover })
         .then(() => res.redirect("/"))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 //lista de comunidades
-router.get('/communities/list', (req, res) => {
+router.get('/communities/list', (req, res, next) => {
 
     Community
         .find()
         .then(response => res.render("communities/list", { data: response }))
         // .then(communities => res.render("communities/list", communities))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 //detalles de cada comunidad
 
-router.get('/community/:_id', (req, res) => {
+router.get('/community/:_id', (req, res, next) => {
 
     const { _id } = req.params
 
@@ -45,14 +45,14 @@ router.get('/community/:_id', (req, res) => {
         .findById(_id)
         .populate("members")
         .then(community => { res.render("communities/details", community) })
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 
-router.post('/addcommunity/:_id', (req, res) => {
+router.post('/addcommunity/:_id', (req, res, next) => {
 
     if (!req.session.currentUser) {
-        return res.status(401).send("Usuario no autenticado");
+        return res.redirect("/login")
     } else {
         const { _id: idCommunity } = req.params
         const userId = req.session.currentUser._id
@@ -61,7 +61,7 @@ router.post('/addcommunity/:_id', (req, res) => {
             .findByIdAndUpdate(idCommunity, { $push: { members: userId } })
             // .findByIdAndUpdate(_id, { $addToSet: { members: req.session.currentUser._id } })
             .then(() => res.redirect(`/community/${idCommunity}`))
-            .catch(err => console.log(err))
+            .catch(err => next(err))
     }
 })
 
@@ -81,7 +81,7 @@ router.post('/deletecommunity/:_id', (req, res) => {
     }
 })
 
-router.get('/community/:_id/forum', (req, res) => {
+router.get('/community/:_id/forum', (req, res, next) => {
 
     const { _id: community } = req.params
 
@@ -89,8 +89,7 @@ router.get('/community/:_id/forum', (req, res) => {
         .find({ community })
         .populate("user", "username")
         .then((comments) => res.render("communities/comments", { comments, community }))
-        .catch(err => console.log(err))
-
+        .catch(err => next(err))
 })
 
 

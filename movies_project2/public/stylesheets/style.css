@@ -3,6 +3,10 @@ body {
   background-color: rgba(103, 100, 100, 0.519);
 }
 
+.footer {
+  background-color: transparent !important;
+}
+
 a {
   color: #00b7ff;
 }
@@ -133,6 +137,11 @@ h6 {
 }
 
 
+.userInfo {
+  padding-right: 120px;
+}
+
+
 
 
 
@@ -174,6 +183,10 @@ a img.icon {
   display: inline-block;
   height: 1em;
   margin: 0 0 -0.1em 0.3em;
+}
+
+.white {
+  color: white
 }
 
 

@@ -40,9 +40,7 @@ router.post("/editprofile/delete", (req, res, next) => {
 
     User
         .findByIdAndDelete(_id)
-        .then(() => {
-            console.log("usuario borrado!!!!!!!!!!")
-        })
+        .then(() => res.redirect("/myprofile"))
         .catch(err => next(err))
 })
 

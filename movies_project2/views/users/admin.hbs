@@ -1,0 +1,54 @@
+{{!-- <div class="container">
+    <div class="card mt-5" style="width: 18rem;">
+        {{#each user}}
+        <img src="{{avatar}}" class="card-img-top" alt="avatar">
+        <div class="card-body">
+            <h5 class="card-title">{{username}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="btn btn-primary">Delete user</a>
+            {{/each}}
+        </div>
+    </div>
+
+</div> --}}
+
+<h3 class="white mt-5">Users controller: </h3>
+
+<div class="container">
+    <div class=" d-flex justify-content-center">
+
+        <div class="card mt-5" style="width: 18rem;">
+            {{#each user}}
+            <div class="card-body">
+                <h5 class="card-title">{{username}}</h5>
+                <p class="card-text">{{email}}</p>
+                <hr>
+                <form action="/deleteuser/{{this._id}}" method="POST">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+{{!-- <div class="container">
+    <h1>All the users: </h1>
+    <hr>
+    <div class="row">
+        {{#each user}}
+        <div class="col-4">
+
+            <div class="card" style="width: 18rem;">
+                <img src="{{avatar}}" class="card-img-top mb-5" alt="poster">
+                <div class="card-body">
+                    <h5 class="card-title"> {{username}}</h5>
+                    <a href="#" class="btn btn-primary">Delete user</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div> --}}

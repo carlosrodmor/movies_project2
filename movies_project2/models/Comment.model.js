@@ -15,8 +15,8 @@ const commentSchema = new Schema(
         },
         text: {
             type: String,
-            required: [true, 'El texto es obligatorio'],
-            minlength: [20, 'Mínimo 20 caracteres']
+            required: true,
+            minlength: [20, '20 characters required']
         }
         // likes: [{
         //     type: Schema.Types.ObjectId,
